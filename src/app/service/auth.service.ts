@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Auth, signInWithPopup, GoogleAuthProvider, signOut } from '@angular/fire/auth';
+import { FirebaseService } from './firebase.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private auth: Auth) {}
+  constructor(private firebaseService: FirebaseService) {}
 
   loginWithGoogle() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider());
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(this.firebaseService.auth, provider);
   }
 
   logout() {
-    return signOut(this.auth);
+    return signOut(this.firebaseService.auth);
   }
 }

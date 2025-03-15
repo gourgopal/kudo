@@ -434,6 +434,10 @@
       <pre *ngSwitchCase="'build'">ng build</pre>
   </div>
 
+  <button (click)="authService.loginWithGoogle()">Login with Google</button>
+  <button (click)="authService.logout()">Logout</button>
+
+
   <!-- Links -->
   <div class="card-container">
     <a class="circle-link" title="Find a Local Meetup" href="https://www.meetup.com/find/?keywords=angular" target="_blank" rel="noopener">

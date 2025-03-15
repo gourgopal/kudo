@@ -17,15 +17,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
-  ],
-  providers: [
+    BrowserAnimationsModule,
     importProvidersFrom(
       provideFirebaseApp(() => initializeApp(environment.firebase)),
       provideAuth(() => getAuth()),
       provideFirestore(() => getFirestore())
     )
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
